@@ -10,15 +10,16 @@ Voor de concrete-implementatie ben je vrij. Probeer te voldoen aan de specificat
 die hier zijn opgelijst. Meer mag ;-)
 
 - Je zorgt voor een interactieve interface via de terminal. De gebruiker kan de
-toepassing bedienen via de terminal (input-functie). 
+toepassing bedienen via de terminal (input-functie).  => done
+
 - Je zorgt ervoor dat servers
-kunnen toegevoegd, verwijderd, of in een lijst getoond worden.
+kunnen toegevoegd, verwijderd, of in een lijst getoond worden. => done
 
 - Je zorgt ervoor dat je systeem ook op dezelfde manier bedienbaar via de
 command-line interface. Je gebruikt hiervoor sys.argv.
 
 - Je houdt de ingevoerde data, alsook de uitgevoerde checks bij in één of
-meerdere json-bestand(en).
+meerdere json-bestand(en). => done
 
 - Je zorgt er met command-line argumenten voor dat je tool in 2 modi kan
 uitgevoerd worden, in management modus (om servers toe te voegen en
@@ -36,5 +37,6 @@ weggeschreven data in het json-bestand.
 
 - Probeer je code zo georganiseerd mogelijk te houden, in meerdere modules als
 het moet. Met gebruik van functies.
+
 ## Tip: pingen in Python? https://www.delftstack.com/howto/python/python-ping/
 ## Optioneel: voeg de mogelijkheid tot meerdere checks toe aan je toepassing. Bvb: het checken van een web pagina (hiervoor kan je gebruik maken van de requests library). Je mag hier zo ver gaan als je zelf wil.
