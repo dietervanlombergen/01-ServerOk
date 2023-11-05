@@ -9,7 +9,7 @@ import datetime # To get the current time
 
 # Where the json files are stored
 SERVERDATA = "json_data/servers.json"
-PINGCHECKDATA = "json_data/ping_checks.json"
+PINGCHECKDATA = "log/ping_checks.json"
 
 
 # Server functions
@@ -49,8 +49,6 @@ def delete_server(name):
     with open(SERVERDATA, "r") as s:
         server_data = json.load(s)
 
-    console.log(server_data)
-
     # Remove server from list
     for server in server_data:
         if server["name"] == name:
@@ -61,8 +59,6 @@ def delete_server(name):
     with open(SERVERDATA, "w") as s:
         json.dump(server_data, s, indent=4)
 
-    console.log(server_data)
-
 def show_servers():
     """Show all servers"""
 
@@ -72,7 +68,7 @@ def show_servers():
         with open(SERVERDATA, "r") as s:
             server_data = json.load(s)
 
-        console.log(server_data)
+        #console.log(server_data)
 
         # Tables
         table = getTable()
@@ -107,7 +103,29 @@ def clear_log(log_file):
 
 # Log Ping checks
 
-def log_pingcheck(server , result):
+# def log_pingcheck(server , result):
+#     """Add log for ping check"""
+#     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+#     try:
+#         if not os.path.exists(PINGCHECKDATA) or os.path.getsize(PINGCHECKDATA) == 0:
+#             data = []
+#         else:
+#             # Read current pings
+#             with open(PINGCHECKDATA, "r") as p:
+#                 data = json.load(p)
+
+#         # Add ping entry to list
+#         entry = {"date": timestamp, "type": "ping" ,"name": server["name"], "ip": server["ip"], "result": result}
+#         data.append(entry)
+
+#         # Write data to file
+#         with open(PINGCHECKDATA, "w") as p:
+#             json.dump(data, p, indent=4)
+#     except Exception as e: 
+#         console.log(f"{e}", style="red")
+
+def log_entry(server , result, type):
     """Add log for ping check"""
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -120,7 +138,7 @@ def log_pingcheck(server , result):
                 data = json.load(p)
 
         # Add ping entry to list
-        entry = {"date": timestamp, "name": server["name"], "ip": server["ip"], "result": result}
+        entry = {"date": timestamp, "type": type ,"name": server["name"], "ip": server["ip"], "result": result}
         data.append(entry)
 
         # Write data to file
@@ -128,4 +146,24 @@ def log_pingcheck(server , result):
             json.dump(data, p, indent=4)
     except Exception as e: 
         console.log(f"{e}", style="red")
+
+def get_logpings():
+    """Get the latest log info"""
+    try:
+        if not os.path.exists(PINGCHECKDATA) or os.path.getsize(PINGCHECKDATA) == 0:
+            return []
+        else:
+            # Read current pings
+            with open(PINGCHECKDATA, "r") as p:
+                data = json.load(p)
+
+
+        # Count the servers for latest information
+        number_servers = len(get_servers())
+        
+        return data[-number_servers:]
+
+    except Exception as e: 
+        console.log(f"{e}", style="red")
+    
 

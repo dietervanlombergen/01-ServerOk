@@ -2,4 +2,4 @@ venv
 __pycache__
 test.py
 richOptions.txt
-json_data
+log

@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Google",
+        "ip": "www.google.com"
+    },
+    {
+        "id": 2,
+        "name": "YouTube",
+        "ip": "www.youtube.com"
+    },
+    {
+        "id": 3,
+        "name": "Facebook",
+        "ip": "www.facebook.com"
+    },
+    {
+        "id": 4,
+        "name": "Amazon",
+        "ip": "www.amazon.com"
+    },
+    {
+        "id": 5,
+        "name": "Twitter",
+        "ip": "www.twitter.com"
+    },
+    {
+        "id": 6,
+        "name": "Instagram",
+        "ip": "www.instagram.com"
+    },
+    {
+        "id": 7,
+        "name": "LinkedIn",
+        "ip": "www.linkedin.com"
+    },
+    {
+        "id": 8,
+        "name": "Reddit",
+        "ip": "www.reddit.com"
+    },
+    {
+        "id": 9,
+        "name": "Netflix",
+        "ip": "www.netflix.com"
+    },
+    {
+        "id": 10,
+        "name": "eBay",
+        "ip": "www.ebay.com"
+    },
+    {
+        "id": 11,
+        "name": "Microsoft",
+        "ip": "www.microsoft.com"
+    },
+    {
+        "id": 12,
+        "name": "Wikipedia",
+        "ip": "en.wikipedia.org"
+    },
+    {
+        "id": 13,
+        "name": "Yahoo",
+        "ip": "www.yahoo.com"
+    },
+    {
+        "id": 14,
+        "name": "Apple",
+        "ip": "www.apple.com"
+    },
+    {
+        "id": 15,
+        "name": "WhatsApp",
+        "ip": "www.whatsapp.com"
+    },
+    {
+        "id": 16,
+        "name": "Pinterest",
+        "ip": "www.pinterest.com"
+    },
+    {
+        "id": 17,
+        "name": "Spotify",
+        "ip": "www.spotify.com"
+    },
+    {
+        "id": 18,
+        "name": "Airbnb",
+        "ip": "www.airbnb.com"
+    },
+    {
+        "id": 19,
+        "name": "Adobe",
+        "ip": "www.adobe.com"
+    },
+    {
+        "id": 20,
+        "name": "IMDb",
+        "ip": "www.imdb.com"
+    }
+]
