@@ -3,10 +3,7 @@ from ping3 import ping # Ping functions
 from console import console # Console to use
 from console import getTable
 from rich.live import Live
-from data import log_entry # To add log entry
-
-
-
+from data import add_log_entry # To add log entry
 
 
 def startping_servers(servers):
@@ -47,7 +44,7 @@ def startping(server):
 
     #info = {"timeout": timeout, "is_alive": is_alive, "rtt": rtt}
 
-    log_entry(server, bool(res), "ping")
+    add_log_entry(server, bool(res), "ping")
 
     if res == False:
         return False

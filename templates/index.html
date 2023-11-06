@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server status info</title>
+    <title>Server Log</title>
     <link rel="stylesheet" href="/static/css/main.css" />
 </head>
 <body>
     <header>
-        <h1>Server Status Page</h1>
+        <h1>Server Log</h1>
     </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Hostname</th>
+                <th>Type of Check</th>
+                <th>IP Address</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% block content %}
+            {% for server in servers %}
+            <tr>
+                <td>{{ server["name"] }}</td>
+                <td>{{server["type"]}}</td>
+                <td>{{server["ip"]}}</td>
+                <td>{{server["date"]}}</td>
+                {% if server["result"] == True%}
+                    <td class="status status-online">Online</td>
+                    {% else %}
+                    <td class="status status-offline">Offline</td>
+                    {% endif %}
+            </tr>
+            {% endfor %}
+        {% endblock %}
 
-{% block content %}
-    {% for server in servers %}
-        <div class="server-status">
-            <h2>{{ server["name"] }}</h2>
-            <p>Type: {{server["type"]}}</p>
-            <p>Date: {{server["date"]}}</p>
-            {% if server["result"] == True%}
-            <p>Status: <span class="status status-online">Online</span></p>
-            {% else %}
-            <p>Status: <span class="status status-offline">Offline</span></p>
-            {% endif %}
-            <p>IP Address: {{ server["ip"] }}</p>
-        </div>
-    {% endfor %}
-{% endblock %}
-
+        </tbody>
+    </table>
 </body>
 </html>

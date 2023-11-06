@@ -1,11 +1,12 @@
 # Imports
 import sys  # Sys arguments
+import os  # To list a dir
 from console import console  # Rich text output
 from rich.prompt import IntPrompt
 from rich.prompt import Prompt
 from rich.prompt import Confirm
 
-from app import app
+from app import app # Flask web application
 
 import ping  # Ping functions
 import data  # Data functions
@@ -13,7 +14,6 @@ import data  # Data functions
 from console import getTable  # Reset the table
 from console import show_options
 
-import os  # To list a dir
 
 # Constants
 TITLE = "Server OK?"
@@ -38,7 +38,7 @@ def main():
     """Start of the application"""
 
     # CHECK IF THERE ARE ARGUMENTS
-    if len(sys.argv) <= 1:
+    if len(sys.argv)<= 1:
         console.print(
             ":rotating_light:",
             "Not possible to start with no mode selected",
@@ -46,7 +46,7 @@ def main():
         )
         sys.exit()
     else:
-        # 1 = mode
+        # 1 = mode , 2 = command
         if sys.argv[1] == "management":
             management_mode()
         elif sys.argv[1] == "check":
@@ -68,7 +68,7 @@ def check_mode():
         show_options(CHECKMODE_OPTIONS, "Check mode options")
         option = IntPrompt.ask("Which option do you select")
     else:
-        # Set the command as option
+        # Set the type as option
         option = sys.argv[2]
 
     # Check which function to execute
@@ -119,9 +119,8 @@ def management_mode():
                         data.delete_server(sys.argv[3])
             else:
                 name_list = [server["name"] for server in data.get_servers()]
-                print(name_list)
-                name = Prompt.ask("Enter the server name")
-                confirm = Confirm.ask(f":rotating_light: Are you sure you want delete {name} server", choices=[name_list], show_choices=True)
+                name = Prompt.ask("Enter the server name", choices=name_list, show_choices=True)
+                confirm = Confirm.ask(f":rotating_light: Are you sure you want delete [red]{name} server")
                 if confirm == True:
                     data.delete_server(name)
 

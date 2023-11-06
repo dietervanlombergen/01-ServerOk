@@ -40,3 +40,16 @@ het moet. Met gebruik van functies.
 
 ## Tip: pingen in Python? https://www.delftstack.com/howto/python/python-ping/
 ## Optioneel: voeg de mogelijkheid tot meerdere checks toe aan je toepassing. Bvb: het checken van een web pagina (hiervoor kan je gebruik maken van de requests library). Je mag hier zo ver gaan als je zelf wil.
+
+## Usage
+
+- Command line arguments
+
+1. python main.py mode - management or check
+1. python main.py mode command - See command options ( add, delete, show, clear, stop)
+1. python main.py mode command parameters - See options for parameters
+
+
+
+
+- User input with terminal

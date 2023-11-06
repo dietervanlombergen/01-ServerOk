@@ -45,11 +45,6 @@
         "ip": "www.netflix.com"
     },
     {
-        "id": 10,
-        "name": "eBay",
-        "ip": "www.ebay.com"
-    },
-    {
         "id": 11,
         "name": "Microsoft",
         "ip": "www.microsoft.com"
@@ -58,11 +53,6 @@
         "id": 12,
         "name": "Wikipedia",
         "ip": "en.wikipedia.org"
-    },
-    {
-        "id": 13,
-        "name": "Yahoo",
-        "ip": "www.yahoo.com"
     },
     {
         "id": 14,
@@ -80,11 +70,6 @@
         "ip": "www.pinterest.com"
     },
     {
-        "id": 17,
-        "name": "Spotify",
-        "ip": "www.spotify.com"
-    },
-    {
         "id": 18,
         "name": "Airbnb",
         "ip": "www.airbnb.com"
@@ -98,5 +83,15 @@
         "id": 20,
         "name": "IMDb",
         "ip": "www.imdb.com"
+    },
+    {
+        "id": 21,
+        "name": "Ap",
+        "ip": "www.ap.be"
+    },
+    {
+        "id": 23,
+        "name": "Kwibus",
+        "ip": "www.kwibus.com"
     }
 ]

@@ -20,3 +20,4 @@ def show_options(options, title=""):
         optionsTable.add_row(str(i), options[i]) # Create a row for every possible option
 
     console.print(optionsTable) # print the options table
+

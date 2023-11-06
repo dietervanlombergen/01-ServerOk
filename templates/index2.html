@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server status info</title>
+    <link rel="stylesheet" href="/static/css/main.css" />
+</head>
+<body>
+    <header>
+        <h1>Server Status Page</h1>
+    </header>
+
+{% block content %}
+    {% for server in servers %}
+        <div class="server-status">
+            <h2>{{ server["name"] }}</h2>
+            <p>Type: {{server["type"]}}</p>
+            <p>Date: {{server["date"]}}</p>
+            {% if server["result"] == True%}
+            <p>Status: <span class="status status-online">Online</span></p>
+            {% else %}
+            <p>Status: <span class="status status-offline">Offline</span></p>
+            {% endif %}
+            <p>IP Address: {{ server["ip"] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+</body>
+</html>
