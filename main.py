@@ -136,6 +136,11 @@ def management_mode():
                     show_choices=True,
                 )
                 data.clear_log(f"log/{log}")
+        case 4:
+            console.print(
+                ":rotating_light:", "Exiting the management mode", style="red"
+            )
+            sys.exit()
 
         case _:
             console.print(
